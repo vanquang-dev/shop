@@ -1,0 +1,51 @@
+Mối quan hệ:
+user - address : nhiều - một (1 địa chỉ thuộc về 1 người, 1 người có thể có nhiều địa chỉ )
+user -oreder : một - nhiều
+product - order: một - một
+order - address: một - một
+
+
+Giải thích các giá trị trong bảng:
+- users
+	+ ID : khóa chính
+	+ username : tên đăng nhập
+	+ password : mật khẩu đăng nhập
+	+ kind : phân quyền ( 0 là quản trị viên, 1 khách dùng)
+	+ created : ngày tạo tài khoản
+
+- products
+	+ ID : khóa chính
+	+ name : tên sản phẩm
+	+ price : giá sp
+	+ created : ....
+
+- orders 
+	+ ID : khóa chính
+	+ id_user : mã người dùng
+	+ id_products : mã sp
+	+ id_address : mã địa chỉ
+	+ number : số lượng sp
+	+ price : tổng giá đơn hàng
+	+ status : trạng thái đơn hàng ( 0 là đang trong giỏ, 1 đang chuyển ...)
+	+ created : .....
+
+- address 
+	+ ID : khóa chính
+	+ id_user : mã người dùng
+	+ city : tên tỉnh, thành phố
+	+ district : tên huyện
+	+ address : chi tiết nới giao ( làng xóm, số nhà)
+	+ number_phone : sđt
+	+ created : ....
+
+
+*Chức năng của trang web:
+
+- Phần người dùng
+	+ xem hàng, đăng nhập đăng ký
+	+ đặt hàng, xác nhận đơn hàng ( yêu cầu có địa chỉ nếu k có thì phải thêm vào )
+- Phần quản lý
+	+ Thêm xóa sửa sp
+
+- cần thêm trong quản lý: quản lý đơn hàng, tài khoản, xử lý ảnh, ....
+
